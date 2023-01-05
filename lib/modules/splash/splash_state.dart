@@ -1,9 +1,11 @@
 class SplashState {
-  SplashState init() {
-    return SplashState();
-  }
+  bool isLoaded;
 
-  SplashState clone() {
-    return SplashState();
+  SplashState({this.isLoaded = false});
+
+  SplashState copy({bool isLoaded = false}) {
+    return SplashState(
+      isLoaded: isLoaded,
+    );
   }
 }

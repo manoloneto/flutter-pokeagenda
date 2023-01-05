@@ -3,14 +3,15 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:pokeagenda/modules/splash/splash_view.dart';
 
 import 'splash_cubit.dart';
-import 'splash_state.dart';
 
 class SplashPage extends StatelessWidget {
+  const SplashPage({super.key});
+
   @override
   Widget build(BuildContext context) {
     return BlocProvider(
-      create: (BuildContext context) => SplashCubit(),
-      child: Builder(builder: (context) => SplashView()),
+      create: (BuildContext context) => SplashCubit()..getPokemonList(),
+      child: Builder(builder: (context) => const SplashView()),
     );
   }
 }
