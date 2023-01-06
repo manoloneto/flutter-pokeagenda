@@ -1,14 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
-import 'splash_cubit.dart';
-import 'splash_state.dart';
-import 'splash_view.dart';
+import 'main_cubit.dart';
+import 'main_state.dart';
+import 'main_view.dart';
 
-class SplashPage extends StatelessWidget {
-  static const routeName = '/';
+class MainPage extends StatelessWidget {
+  static const routeName = '/main';
 
-  const SplashPage({super.key});
+  const MainPage({super.key});
 
   static Future<dynamic> push(BuildContext context) {
     return Navigator.of(context).pushNamed(routeName);
@@ -22,17 +22,17 @@ class SplashPage extends StatelessWidget {
     return MaterialPageRoute(
       settings: settings,
       builder: (_) => BlocProvider(
-        create: (context) => SplashCubit()..getPokemonList(),
-        child: const SplashPage(),
+        create: (context) => MainCubit(),
+        child: const MainPage(),
       ),
     );
   }
 
   @override
   Widget build(BuildContext context) {
-    return BlocBuilder<SplashCubit, SplashState>(
+    return BlocBuilder<MainCubit, MainState>(
       builder: (context, state) {
-        return SplashView(state: state);
+        return const MainView();
       },
     );
   }

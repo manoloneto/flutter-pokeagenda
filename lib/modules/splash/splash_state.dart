@@ -1,11 +1,11 @@
 class SplashState {
-  bool isLoaded;
+  bool? isLoaded;
 
-  SplashState({this.isLoaded = false});
+  SplashState({this.isLoaded});
 
-  SplashState copy({bool isLoaded = false}) {
+  SplashState copy({bool? isLoaded}) {
     return SplashState(
-      isLoaded: isLoaded,
+      isLoaded: isLoaded ?? this.isLoaded,
     );
   }
 }
