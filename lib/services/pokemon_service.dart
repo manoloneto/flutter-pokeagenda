@@ -5,7 +5,7 @@ import 'package:pokeagenda/utilities/interceptors/logger_interceptor.dart';
 
 class PokemonService {
   static const String baseUrl = "https://pokeapi.co/api/v2/";
-  static const String pokemonList = "pokemon/?limit=10000";
+  static const String pokemonList = "pokemon/";
 
   http.Client client = InterceptedClient.build(
     interceptors: [LoggerInterceptor()],
